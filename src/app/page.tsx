@@ -1,3 +1,4 @@
+import { ThalaForm } from '@/components/pages/home/client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Fragment } from 'react';
@@ -20,7 +21,12 @@ export default function Home() {
 				</div>
 			</header>
 			<main>
-				<p>hello world</p>
+				<section className='mx-auto max-w-maxi py-5'>
+					<div>
+						<h2>Thala for a reason</h2>
+						<ThalaForm />
+					</div>
+				</section>
 			</main>
 		</Fragment>
 	);

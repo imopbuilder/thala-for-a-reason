@@ -1,0 +1,8 @@
+.submit-btn {
+    &:hover {
+        ~ svg {
+            transform: translateX(-20px);
+            opacity: 1;
+        }
+    }
+}
