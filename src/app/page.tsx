@@ -15,7 +15,7 @@ export default function page() {
 					</div>
 					<div>
 						<Button size='sm' asChild>
-							<Link href='/'>Support Project</Link>
+							<Link href='https://github.com/imopbuilder/thala-for-a-reason'>Support Project</Link>
 						</Button>
 					</div>
 				</div>
