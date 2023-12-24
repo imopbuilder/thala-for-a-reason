@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import styles from '@/styles/styles.module.scss';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { MoveRight } from 'lucide-react';
 import Image from 'next/image';
@@ -33,14 +32,14 @@ export function ThalaForm() {
 
 	return (
 		<Fragment>
-			<div className='p-5 max-w-[600px] mx-auto'>
+			<div className='p-6 max-w-[600px] mx-auto'>
 				<Form {...form}>
-					<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+					<form onSubmit={form.handleSubmit(onSubmit)} className='flex items-top justify-between gap-4'>
 						<FormField
 							control={form.control}
 							name='input'
 							render={({ field }) => (
-								<FormItem>
+								<FormItem className='w-full'>
 									<FormControl>
 										<Input placeholder='Enter anything' autoComplete='off' {...field} />
 									</FormControl>
@@ -48,11 +47,14 @@ export function ThalaForm() {
 								</FormItem>
 							)}
 						/>
-						<div className='flex items-center justify-between'>
-							<Button className={styles['submit-btn']} type='submit'>
-								Submit
+						<div className='flex items-top justify-between'>
+							<Button className='group' type='submit' size='lg'>
+								<span className='duration-300 opacity-100 group-hover:translate-x-24 group-hover:opacity-0'>Submit</span>
+								<MoveRight
+									className='absolute z-10 text-background duration-300 opacity-0 -translate-x-14 group-hover:translate-x-0 group-hover:opacity-100'
+									size={18}
+								/>
 							</Button>
-							<MoveRight className='text-muted-foreground duration-300 opacity-0 -translate-x-14' size={18} />
 						</div>
 					</form>
 				</Form>
